@@ -101,15 +101,14 @@ namespace BaiTapLon
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+            OpenChildForm(new Forms.FormEmployees(), sender);
 
         }
         
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
-
+            OpenChildForm(new Forms.FormCustomers(), sender);
         }
 
         private void btnSupplier_Click(object sender, EventArgs e)
