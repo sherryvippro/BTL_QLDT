@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseProcess.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +64,12 @@
     </Compile>
     <Compile Include="Forms\FormEmployees.Designer.cs">
       <DependentUpon>FormEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormProducts.cs">
       <SubType>Form</SubType>
@@ -82,6 +89,9 @@
     <EmbeddedResource Include="Forms\FormEmployees.resx">
       <DependentUpon>FormEmployees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormProducts.resx">
       <DependentUpon>FormProducts.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,7 +103,36 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\BaiTapLon.exe.config" />
+    <None Include="Images\IPHONE\ip13_den.webp" />
+    <None Include="Images\IPHONE\ip13_hong.webp" />
+    <None Include="Images\IPHONE\ip13_xanhduong.webp" />
+    <None Include="Images\IPHONE\ip13_xanhla.webp" />
+    <None Include="Images\IPHONE\ip14_den.webp" />
+    <None Include="Images\IPHONE\ip14_tim.webp" />
+    <None Include="Images\IPHONE\ip14_trang.webp" />
+    <None Include="Images\IPHONE\ip14_xanhduong.webp" />
+    <None Include="Images\IPHONE\ip15_den.webp" />
+    <None Include="Images\IPHONE\ip15_hong.webp" />
+    <None Include="Images\IPHONE\ip15_vang.webp" />
+    <None Include="Images\IPHONE\ip15_xanhla.webp" />
+    <None Include="Images\OPPO\op_aden.webp" />
+    <None Include="Images\OPPO\op_axanh.webp" />
+    <None Include="Images\OPPO\op_nden.webp" />
+    <None Include="Images\OPPO\op_ntim.webp" />
+    <None Include="Images\OPPO\op_renoxam.webp" />
+    <None Include="Images\OPPO\op_renoxanh.webp" />
+    <None Include="Images\SAMSUNG\ss_acam.webp" />
+    <None Include="Images\SAMSUNG\ss_axanh.webp" />
+    <None Include="Images\SAMSUNG\ss_s23den.webp" />
+    <None Include="Images\SAMSUNG\ss_s23kem.webp" />
+    <None Include="Images\SAMSUNG\ss_s23tim.webp" />
+    <None Include="Images\SAMSUNG\ss_s23xanh.webp" />
+    <None Include="Images\SAMSUNG\ss_zden.webp" />
+    <None Include="Images\SAMSUNG\ss_zkem.webp" />
+    <None Include="Images\SAMSUNG\ss_zxanhduong.webp" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -106,6 +145,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\BaiTapLon.exe" />
+    <Content Include="bin\Debug\BaiTapLon.pdb" />
+    <Content Include="bin\Debug\Images\DIENTHOAI\Apple-MLPG3HN-A-SmartPhones-491997700-i-1-1200Wx1200H-300Wx300H.jpg" />
+    <Content Include="bin\Debug\Images\DIENTHOAI\iphone_14_pro_max_1tb_gold_1664203407_6d4dddd0_progressive.jpg" />
+    <Content Include="bin\Debug\Images\DIENTHOAI\mob4.png" />
+    <Content Include="bin\Debug\Images\DIENTHOAI\OIP %281%29.jpg" />
+    <Content Include="bin\Debug\Images\DIENTHOAI\OIP %282%29.jpg" />
+    <Content Include="bin\Debug\Images\DIENTHOAI\OIP.jpg" />
+    <Content Include="Images\ICONS\close.png" />
+    <Content Include="bin\Debug\Images\NHANVIEN\NV01.jpg" />
+    <Content Include="bin\Debug\Images\NHANVIEN\NV02.jpg" />
+    <Content Include="bin\Debug\Images\NHANVIEN\NV03.jpg" />
+    <Content Include="bin\Debug\Images\NHANVIEN\NV04.jpg" />
+    <Content Include="bin\Debug\Images\NHANVIEN\NV05.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

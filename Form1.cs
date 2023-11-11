@@ -1,9 +1,11 @@
-﻿using System;
+﻿using BaiTapLon.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,10 +18,23 @@ namespace BaiTapLon
         private Random random;
         private int tempIndex;
         private Form activeForm;
+        public static string userName = "";
+        public static string phanquyen = "";
+
         public formMain()
         {
             InitializeComponent();
             random = new Random();
+            btnCloseChildForm.Visible = false;
+           
+        }
+        public static void PhanQuyen(Button btnAdd, Button btnSave, Button btnEdit, Button btnClear, Button btnSkip, bool hien)
+        {
+            btnAdd.Visible = hien;
+            btnSave.Visible = hien;
+            btnEdit.Visible = hien;
+            btnClear.Visible = hien;
+            btnSkip.Visible = hien;
         }
         private Color SelectThemeColor()
         {
@@ -44,6 +59,12 @@ namespace BaiTapLon
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    panelTitleBar.BackColor = color;
+                    panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3); 
+                    ThemeColor.PrimaryColor = color;
+                    ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
+                    btnCloseChildForm.Visible = true;
+
                 }
             }
         }
@@ -53,7 +74,7 @@ namespace BaiTapLon
             {
                 if(priviousBtn.GetType() == typeof(Button))
                 {
-                    priviousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    priviousBtn.BackColor = Color.FromArgb(108, 166, 205);
                     priviousBtn.ForeColor = Color.White;
                     priviousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
@@ -93,11 +114,7 @@ namespace BaiTapLon
 
         }
 
-        private void btnAccount_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender);
-
-        }
+        
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
@@ -111,10 +128,29 @@ namespace BaiTapLon
             OpenChildForm(new Forms.FormCustomers(), sender);
         }
 
-        private void btnSupplier_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender);
+        
 
+        private void btnCloseChildForm_Click(object sender, EventArgs e)
+        {
+            if(activeForm != null)
+            {
+                activeForm.Close();
+            }
+            Reset();
+        }
+        private void Reset()
+        {
+            DisableButton();
+            lblHome.Text = "TRANG CHỦ";
+            panelTitleBar.BackColor = Color.FromArgb(118, 146, 200);
+            panelLogo.BackColor = Color.FromArgb(118, 146, 239);
+            currentButton = null;
+            btnCloseChildForm.Visible = false;
+        }
+
+        private void btnHangSX_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
