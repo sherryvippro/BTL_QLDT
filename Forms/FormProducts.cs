@@ -33,6 +33,8 @@ namespace BaiTapLon.Forms
                     btns.ForeColor = Color.White;
                     btns.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                    btnS.BackColor = ThemeColor.PrimaryColor;
+                    btnChoosePic.BackColor = ThemeColor.SecondaryColor;
                 }
             }
         }
@@ -40,6 +42,7 @@ namespace BaiTapLon.Forms
         private void FormProducts_Load(object sender, EventArgs e)
         {
             LoadTheme();
+            grbSearchProduct.Visible = false;
             DataTable dataTable = dtBase.Select("Select masp, tensp, soluong, dongianhap, dongiaban, mahang, mau, anh, ghichu from tSanPham");
             dgvProducts.DataSource = dataTable;
             dgvProducts.Columns[0].HeaderText = "Mã SP";
@@ -58,35 +61,11 @@ namespace BaiTapLon.Forms
             cboTenHang.DisplayMember = "TenHang";
             cboTenHang.ValueMember = "MaHang";
             cboTenHang.DataSource = dtBase.Select("select * from thang");
+
             ProductsReadOnly();
             btnEditProduct.Enabled = false;
             btnClearProduct.Enabled = false;
             btnSkipProduct.Enabled = false;
-            btnSaveProduct.Enabled = false;
-        }
-        private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            ProductsReadOnly();
-
-			txtMaDT.Text = dgvProducts.CurrentRow.Cells[0].Value.ToString();
-            txtTenDT.Text = dgvProducts.CurrentRow.Cells[1].Value.ToString();
-            txtSoLuong.Text = dgvProducts.CurrentRow.Cells[2].Value.ToString();
-            txtGiaNhap.Text = dgvProducts.CurrentRow.Cells[3].Value.ToString();
-            txtGiaBan.Text = dgvProducts.CurrentRow.Cells[4].Value.ToString();
-            txtColor.Text = dgvProducts.CurrentRow.Cells[6].Value.ToString();
-            cboTenHang.SelectedValue = dgvProducts.CurrentRow.Cells[5].Value.ToString();
-            ptrFileName = dgvProducts.CurrentRow.Cells[7].Value.ToString();
-            txtGhiChu.Text = dgvProducts.CurrentRow.Cells[8].Value.ToString();
-			if (ptrFileName != "")
-			{
-                ptrImage.Image = Image.FromFile(Application.StartupPath + "\\Images\\DIENTHOAI\\" + ptrFileName);
-			}
-			else ptrImage.Image = null;
-			
-
-
-			btnEditProduct.Enabled = true;
-            btnClearProduct.Enabled = true;
             btnSaveProduct.Enabled = false;
         }
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -177,6 +156,7 @@ namespace BaiTapLon.Forms
                 else if (int.Parse(txtGiaNhap.Text) > int.Parse(txtGiaBan.Text))
                 {
                     MessageBox.Show("Giá nhập không được lớn hơn giá bán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
                 else
                 {
@@ -195,6 +175,7 @@ namespace BaiTapLon.Forms
                     }
 
                 }
+                btnSkipProduct.Enabled = true;
             }
             if(btnEditProduct.Enabled == true)
             {
@@ -206,7 +187,6 @@ namespace BaiTapLon.Forms
             dtBase.CloseConn();
             btnEditProduct.Enabled = false;
             btnClearProduct.Enabled = false;
-            btnSkipProduct.Enabled = false;
         }
 
         private void btnSkipProduct_Click(object sender, EventArgs e)
@@ -217,6 +197,9 @@ namespace BaiTapLon.Forms
             btnEditProduct.Enabled = false;
             btnClearProduct.Enabled = false;
             btnAddProduct.Enabled = true;
+            grbSearchProduct.Visible = false;
+            dgvProducts.DataSource = dtBase.Select("Select masp, tensp, soluong, dongianhap, dongiaban, mahang, mau, anh, ghichu from tSanPham");
+
         }
 
         private void btnEditProduct_Click(object sender, EventArgs e)
@@ -224,7 +207,7 @@ namespace BaiTapLon.Forms
             txtGiaNhap.Focus();
             EditProducts();
 			btnSaveProduct.Enabled = true;
-
+            btnSkipProduct.Enabled = true;
 		}
 
 		private void btnClearProduct_Click(object sender, EventArgs e)
@@ -237,6 +220,114 @@ namespace BaiTapLon.Forms
 
 				ResetProducts();
                 dtBase.CloseConn();
+            }
+        }
+
+        private void btnSearchProduct_Click_1(object sender, EventArgs e)
+        {
+            txtMaDTSearch.Enabled = false;
+            txtTenDTSearch.Enabled = false;
+            txtHangSearch.Enabled = false;
+            txtMauSearch.Enabled = false;
+            grbSearchProduct.Visible = true;
+            btnSkipProduct.Enabled = true;
+        }
+
+        private void dgvProducts_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            ProductsReadOnly();
+
+            txtMaDT.Text = dgvProducts.CurrentRow.Cells[0].Value.ToString();
+            txtTenDT.Text = dgvProducts.CurrentRow.Cells[1].Value.ToString();
+            txtSoLuong.Text = dgvProducts.CurrentRow.Cells[2].Value.ToString();
+            txtGiaNhap.Text = dgvProducts.CurrentRow.Cells[3].Value.ToString();
+            txtGiaBan.Text = dgvProducts.CurrentRow.Cells[4].Value.ToString();
+            txtColor.Text = dgvProducts.CurrentRow.Cells[6].Value.ToString();
+            cboTenHang.SelectedValue = dgvProducts.CurrentRow.Cells[5].Value.ToString();
+            ptrFileName = dgvProducts.CurrentRow.Cells[7].Value.ToString();
+            txtGhiChu.Text = dgvProducts.CurrentRow.Cells[8].Value.ToString();
+            if (ptrFileName != "")
+            {
+                ptrImage.Image = Image.FromFile(Application.StartupPath + "\\Images\\DIENTHOAI\\" + ptrFileName);
+            }
+            else ptrImage.Image = null;
+
+
+
+            btnEditProduct.Enabled = true;
+            btnClearProduct.Enabled = true;
+            btnSaveProduct.Enabled = false;
+        }
+
+        private void btnS_Click(object sender, EventArgs e)
+        {
+            dtBase.OpenConn();
+            DataTable tblMahang = dtBase.Select("select mahang from thang where tenhang like N'%" + txtHangSearch.Text + "%'");
+            string mahang = "";
+            DataTable dt = dtBase.Select("select masp, tensp, soluong, dongianhap, dongiaban, mahang, mau, anh, ghichu from tsanpham where masp like '%" + txtMaDTSearch.Text + "%'"
+                + "and tensp like N'%" + txtTenDTSearch.Text + "%' and mahang like '%" + mahang + "%' and mau like N'%" +
+                txtMauSearch.Text + "%'");
+            if(dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            dgvProducts.DataSource = dt;
+            dtBase.CloseConn();
+        }
+
+        private void ischecked(object sender, EventArgs e)
+        {
+            if (cbMaDT.Checked)
+            {
+                txtMaDTSearch.Text = "";
+                txtMaDTSearch.Enabled = true;
+            } else
+            {
+                txtMaDTSearch.Text = "";
+                txtMaDTSearch.Enabled = false;
+            }
+            
+        }
+
+        private void cbTenDT_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTenDT.Checked)
+            {
+                txtTenDTSearch.Enabled = true;
+                txtTenDTSearch.Text = "";
+            }
+            else
+            {
+                txtTenDTSearch.Enabled = false;
+                txtTenDTSearch.Text = "";
+            }
+        }
+
+        private void cbHang_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbHang.Checked)
+            {
+                txtHangSearch.Enabled = true;
+                txtHangSearch.Text = "";
+            }
+            else
+            {
+                txtHangSearch.Enabled = false;
+                txtHangSearch.Text = "";
+            }
+        }
+
+        private void cbMau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbMau.Checked)
+            {
+                txtMauSearch.Enabled = true;
+                txtMauSearch.Text = "";
+            }
+            else
+            {
+                txtMauSearch.Enabled = false;
+                txtMauSearch.Text = "";
             }
         }
     }
