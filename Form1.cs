@@ -104,7 +104,7 @@ namespace BaiTapLon
 
         private void btnInvoice_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+			OpenChildForm(new Forms.FormInvoice(), sender);
 
         }
 
