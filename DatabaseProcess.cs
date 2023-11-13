@@ -10,8 +10,9 @@ namespace BaiTapLon
 {
     internal class DatabaseProcess
     {
-        string strConnect = "Data Source=DuongHang;Initial Catalog=QLDT;User ID=sa; Password=123";
-        SqlConnection conn = null;
+		string strConnect = "Data Source=DESKTOP-HP034J7\\SQLEXPRESS;DataBase=QLDT;User ID=sa;Password=123;Integrated Security=false";
+
+		SqlConnection conn = null;
         public void OpenConn()
         {
             conn = new SqlConnection(strConnect);

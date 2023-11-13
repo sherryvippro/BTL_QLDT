@@ -52,6 +52,11 @@ namespace BaiTapLon.Forms
             {
                 formMain.PhanQuyen(btnAdd, btnSave, btnEdit, btnClear, btnSkip, false);
             }
+            EmployeesReadOnly();
+            btnEdit.Enabled = false;
+            btnClear.Enabled = false;
+            btnSave.Enabled = false;
+            btnSkip.Enabled = false;
         }
 		private void ResetEmployees()
 		{
@@ -176,6 +181,7 @@ namespace BaiTapLon.Forms
 			txtTenNV.Focus();
 			EditEmployees();
 			btnSave.Enabled = true;
+			btnSkip.Enabled = true;
 		}
 
 		private void btnClear_Click(object sender, EventArgs e)
