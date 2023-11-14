@@ -48,6 +48,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.lbBangChu = new System.Windows.Forms.Label();
 			this.label20 = new System.Windows.Forms.Label();
 			this.btnTim = new System.Windows.Forms.Button();
@@ -76,7 +77,6 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.dtvHDB = new System.Windows.Forms.DataGridView();
-			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -272,6 +272,15 @@
 			this.groupBox2.Size = new System.Drawing.Size(1033, 137);
 			this.groupBox2.TabIndex = 2;
 			this.groupBox2.TabStop = false;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(622, 44);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(0, 20);
+			this.label1.TabIndex = 31;
 			// 
 			// lbBangChu
 			// 
@@ -577,16 +586,8 @@
 			this.dtvHDB.RowTemplate.Height = 28;
 			this.dtvHDB.Size = new System.Drawing.Size(1033, 222);
 			this.dtvHDB.TabIndex = 4;
+			this.dtvHDB.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvHDB_CellDoubleClick_1);
 			this.dtvHDB.Click += new System.EventHandler(this.dtvHDB_Click);
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(622, 44);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(0, 20);
-			this.label1.TabIndex = 31;
 			// 
 			// FormInvoice
 			// 

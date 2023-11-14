@@ -115,9 +115,9 @@ namespace BaiTapLon
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender);
+			OpenChildForm(new Forms.FormDoanhThu(), sender);
 
-        }
+		}
 
         
 

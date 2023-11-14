@@ -38,22 +38,19 @@ namespace BaiTapLon.Forms
 			txtDonGia.Text = "";
 			txtThanhTien.Text = "";
 			txtTenKH.Text = "";
-
-			//  cboMaSP.Text = "";
 			txtSoLuong.Text = "";
 			txtGiamGia.Text = "";
 			txtThanhTien.Text = "";
 			
 			txtGiamGia.Text = "";
 			txtTongTien.Text = "";
-			lbBangChu.Text = "";
+			label1.Text = "";
 			dtvHDB.DataSource = null;
 		}
 		void LoadData()
 		{
 			DataTable dtChiTiet = data.ReadData("Select tChiTietHDB.MaSP, TenSP, SLBan, DonGiaBan,giamgia, ThanhTien from tChiTietHDB inner join tSanPham on tChiTietHDB.MaSP = tSanPham.MaSP where mahdb='" + txtMaHD.Text + "'");
 			dtvHDB.DataSource = dtChiTiet;
-
 			dtvHDB.Columns[0].Width = 150;
 			dtvHDB.Columns[1].Width = 190;
 			dtvHDB.Columns[2].Width = 150;
@@ -67,8 +64,10 @@ namespace BaiTapLon.Forms
 			dtvHDB.Columns[1].HeaderText = "Tên Điện Thoại";
 			dtvHDB.Columns[2].HeaderText = "Số lượng";
 			dtvHDB.Columns[3].HeaderText = "Đơn giá";
-			  dtvHDB.Columns[4].HeaderText = "Giảm giá (%)";
+			dtvHDB.Columns[4].HeaderText = "Giảm giá (%)";
 			dtvHDB.Columns[5].HeaderText = "Thành tiền";
+			
+
 		}
 		private void FormInvoice_Load(object sender, EventArgs e)
 		{
@@ -85,11 +84,9 @@ namespace BaiTapLon.Forms
 			txtDonGia.ReadOnly = true;
 			txtThanhTien.ReadOnly = true;
 			txtTongTien.ReadOnly = true;
-			txtGiamGia.Text = "";
-			txtTongTien.Text = "";
-
+		/*	txtGiamGia.Text = "";
+			txtTongTien.Text = "";*/
 			cbbMaNV.SelectedIndex = -1;
-			// function.FillCombobox(cbbMaKH, data.ReadData("Select * from tblKhach"), "MaKhach", "MaKhach");
 			cbbMaKH.SelectedIndex = -1;
 			cbbMaSP.SelectedIndex = -1;
 		}
@@ -109,18 +106,12 @@ namespace BaiTapLon.Forms
 
 		private void cbbMaNV_Click(object sender, EventArgs e)
 		{
-			/* DataTable dtNV = data.ReadData("Select MaNV,tenNV from tNhanVien");
-			cbbMaNV.DataSource = dtNV;
-			cbbMaNV.DisplayMember = "MaNV";
-			cbbMaNV.ValueMember = "MaNV";*/
 			function.FillCombobox(cbbMaNV, data.ReadData("Select * from tNhanVien"), "MaNV", "MaNV");
 		}
-
 		private void cbbMaKH_Click(object sender, EventArgs e)
 		{
 			function.FillCombobox(cbbMaKH, data.ReadData("Select * from tKhachHang"), "MaKH", "MaKH");
 		}
-
 		private void cbbMaKH_SelectedValueChanged(object sender, EventArgs e)
 		{
 			try
@@ -136,15 +127,12 @@ namespace BaiTapLon.Forms
 			}
 			catch
 			{
-
 			}
 		}
-
 		private void cbbMaSP_Click(object sender, EventArgs e)
 		{
 			function.FillCombobox(cbbMaSP, data.ReadData("Select * from tSanPham"), "MaSP", "MaSP");
 		}
-
 		private void cbbMaSP_SelectedValueChanged(object sender, EventArgs e)
 		{
 			try
@@ -156,48 +144,22 @@ namespace BaiTapLon.Forms
 					txtTenSP.Text = dtSP.Rows[0]["TenSP"].ToString();
 					txtDonGia.Text = dtSP.Rows[0]["DonGiaBan"].ToString();
 					txtSoLuong.Text = "";
-
-
 				}
 			}
 			catch
 			{
-
 			}
 		}
 
-	
-	/*	private void txtSoLuong_TextChanged(object sender, EventArgs e)
-		{
-			try
-			{
-				double DonGia, GiamGia, soluong;
-				if (txtGiamGia.Text == "")
-					GiamGia = 0;
-				else
-					GiamGia = Convert.ToDouble(txtGiamGia.Text);
-
-
-				DonGia = Convert.ToDouble(txtDonGia.Text);
-				txtThanhTien.Text = (soluong * DonGia - soluong * DonGia * GiamGia / 100).ToString();
-
-			}
-			catch
-			{
-			}
-		}*/
-
-
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-			ResetValue();
-			string str = "HDB";
-			txtMaHD.Text = ft.SinhMaTuDong("tHoaDonBan", "MaHDB", str);
-
 			btnThem.Enabled = false;
 			btnLuu.Enabled = true;
 			btnHuy.Enabled = true;
 			btnIn.Enabled = false;
+			ResetValue();
+			string str = "HDB";
+			txtMaHD.Text = ft.SinhMaTuDong("tHoaDonBan", "MaHDB", str);
 			LoadData();
 
 		}
@@ -226,17 +188,10 @@ namespace BaiTapLon.Forms
 				else if (cbbMaKH.Text == "")
 				{
 					MessageBox.Show("Vui lòng chọn mã khách hàng!");
-
-					/* errNhapTT.Clear();
-                     errNhapTT.SetError(cbbMaKH, "Vui lòng chọn mã khách hàng");*/
 					cbbMaKH.Focus();
 				}
 				else
 				{
-					// errNhapTT.Clear();
-					/*string inputDate = dtpNgayBan.Text.Trim();
-                    DateTime dtNgayBan;
-                    DateTime.TryParse(inputDate, out dtNgayBan);*/
 					DateTime dtNgayBan = Convert.ToDateTime(dtpNgayBan.Text.Trim());
 					data.UpdateData("INSERT INTO tHoaDonBan(MaHDB,NgayLapHD,MaNV,MaKH,TongTien) values('" +
 												 txtMaHD.Text + "','" + string.Format("{0:MM/dd/yyyy}", dtNgayBan) + "',N'" +
@@ -277,21 +232,33 @@ namespace BaiTapLon.Forms
 					data.UpdateData("insert into tChiTietHDB(MaHDB, MaSP, SLban, giamgia, ThanhTien) values ('" + txtMaHD.Text + "', " +
 						"'" + cbbMaSP.SelectedValue.ToString() + "', '" + txtSoLuong.Text + "','" +
 								txtGiamGia.Text + "','" + txtThanhTien.Text + "')");
+					LoadData();
+					
+					//cap nhat sl sp va bang sp
+					slcon = Convert.ToInt32(dtSP.Rows[0]["Soluong"].ToString()) - Convert.ToInt32(txtSoLuong.Text);
+					data.UpdateData("Update tSanPham set SoLuong=" + slcon + " where MaSP ='" + cbbMaSP.SelectedValue.ToString() + "'");
+
+					//cap nhat tong tien
 					dtHD = data.ReadData("Select * from tHoaDonBan where MaHDB = '" + txtMaHD.Text + "'");
 					txtTongTien.Text = (Convert.ToDouble(dtHD.Rows[0]["TongTien"].ToString()) + Convert.ToDouble(txtThanhTien.Text)).ToString();
-					slcon = Convert.ToInt32(dtSP.Rows[0]["Soluong"].ToString()) - Convert.ToInt32(txtSoLuong.Text);
-					data.UpdateData("Change tSanPham set SoLuong=" + slcon + " where MaSP ='" + cbbMaSP.SelectedValue.ToString() + "'");
-					data.UpdateData("Change tHoaDonBan set TongTien='" + txtTongTien.Text + "' where MaHDB='" + txtMaHD.Text + "'");
-					//lbBangChu.Text=ChuyenSoSangChu(txtTongTien.Text);
+					data.UpdateData("Update tHoaDonBan set TongTien='" + txtTongTien.Text + "' where MaHDB='" + txtMaHD.Text + "'");
+					
+
+					label1.Text = "Bằng chữ: " + NumberToText(double.Parse(txtTongTien.Text));
+				
+					//	btnXoa.Enabled = true;
+					btnThem.Enabled = true;
+					btnIn.Enabled = true;
+				
 				}
 			}
-			LoadData();
-			btnIn.Enabled = true;
+		
 		}
+		
 
 		private void cbbTimMaHD_Click(object sender, EventArgs e)
 		{
-			cbbTimMaHD.DataSource = null;
+			
 			function.FillCombobox(cbbTimMaHD, data.ReadData("Select MaHDB from tHoaDonBan"), "MaHDB", "MaHDB");
 		}
 
@@ -322,12 +289,12 @@ namespace BaiTapLon.Forms
 			tenTruong.Range["C11"].Value = "Tên ĐT " + txtTenSP.Text;
 			tenTruong.Range["D11"].Value = "Đơn giá" + txtDonGia.Text;
 			tenTruong.Range["E11"].Value = "Số lượng" + txtSoLuong.Text;
-			tenTruong.Range["F11"].Value = "KM" + txtGiamGia.Text;
-			tenTruong.Range["G11"].Value = "Thành tiền" + txtThanhTien.Text;
+			tenTruong.Range["F11"].Value = "Giảm giá" + txtGiamGia.Text;
+			tenTruong.Range["G12"].Value = "Thành tiền" + txtThanhTien.Text;
 			int hang = 11;
 
-			DataTable tblChiTiet = data.ReadData("Select tSanPham.MaSP,TenSP,tChiTietHDB.SLBan,DonGiaBan," +
-				"ThanhTien from tChiTietHDB inner join tSanPham on tSanPham.MaSP = tChiTietHDB.MaSP where MaHDB = '" + txtMaHD.Text + "'");
+			DataTable tblChiTiet = data.ReadData("Select tSanPham.MaSP,TenSP,tChiTietHDB.SLBan,DonGiaBan,giamgia,ThanhTien from tChiTietHDB " +
+				"inner join tSanPham on tSanPham.MaSP = tChiTietHDB.MaSP where MaHDB = '" + txtMaHD.Text + "'");
 			for (int i = 0; i < tblChiTiet.Rows.Count; i++)
 			{
 				hang++;
@@ -343,8 +310,24 @@ namespace BaiTapLon.Forms
 
 			}
 			tenTruong.Range["D" + (hang + 1).ToString()].Value = "Tổng: " + txtTongTien.Text;
-		//	tenTruong.Range["C" + (hang + 2).ToString()].Value = "Bằng chữ: " + (number); 
-			tenTruong.Range["B" + (hang + 3).ToString()].Value = "Nhân viên bán: " + txtTenNV.Text;
+			double tt = double.Parse(txtTongTien.Text);
+			//	label1.Text = NumberToText(tt);
+			tenTruong.Range["D" + (hang + 2).ToString()].Font.Bold = true;
+			tenTruong.Range["D" + (hang + 2).ToString()].Value = "Bằng chữ: " + NumberToText(tt);
+			//tenTruong.Range["B" + (hang + 3).ToString()].Value = "Nhân viên bán: " + txtTenNV.Text;
+			DataTable tblThongtinHD = data.ReadData("SELECT a.MaHDB, a.NgayLapHD, a.TongTien, b.TenKH, b.DiaChi, b.SDT, c.TenNV FROM tHoaDonBan " +
+			"AS a, tKhachHang AS b, tNhanVien AS c WHERE a.MaHDB = N'" + txtMaHD.Text + "' AND a.MaKH = b.MaKH " +
+			"AND a.MaNV = c.MaNV");
+			DateTime d = Convert.ToDateTime(tblThongtinHD.Rows[0][1]);
+			tenTruong.Range["D16"].Value = "Hà Nội, ngày " + d.Day + " tháng " + d.Month + " năm " + d.Year;
+			tenTruong.Range["E17"].MergeCells = true;
+			tenTruong.Range["E17"].Font.Italic = true;
+			tenTruong.Range["E17"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+			tenTruong.Range["E17"].Value = "Nhân viên bán hàng";
+			tenTruong.Range["E21"].MergeCells = true;
+			tenTruong.Range["E21"].Font.Italic = true;
+			tenTruong.Range["E21"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+			tenTruong.Range["E21"].Value = txtTenNV.Text;
 
 			exSheet.Name = "HoaDonBan";
 			exBook.Activate();
@@ -352,29 +335,9 @@ namespace BaiTapLon.Forms
 				exBook.SaveAs(file.FileName.ToString());
 			exApp.Quit();
 		}
-		//xem lai video
 		private void dtvHDB_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (MessageBox.Show("Bạn không muốn mua sản phẩm này à?", "Yes/No", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-			{
-				//Cập nhật lại số lượng trong bảng hàng
-				string maHang = dtvHDB.CurrentRow.Cells[0].Value.ToString();
-				DataTable dtSP = data.ReadData("Select * from tSanPham where MaSP ='" + maHang + "'");
-				int slcon = int.Parse(dtSP.Rows[0]["SoLuong"].ToString()) +
-					int.Parse(dtvHDB.CurrentRow.Cells[3].Value.ToString());
-				data.UpdateData("Update tSanPham set SoLuong=" + slcon + " where MaSP ='" + maHang + "'");
-				//Tinh lai tong tien hoa don 
-				double tongtien = double.Parse(txtTongTien.Text) - double.Parse(dtvHDB.CurrentRow.Cells[5].Value.ToString());
-				data.UpdateData("update tHoaDonBan set TongTien='" + tongtien.ToString() + "' where MaHDB='" + txtMaHD.Text + "'");
-				txtTongTien.Text = tongtien.ToString();
-				//Xóa chi tiết 
-				data.UpdateData("delete tChiTietHDB where MaHDB='" + txtMaHD.Text + "' and MaSP='" + maHang + "'");
-				//Load lại dataGridview
-				/*    dtvHDB.DataSource = data.ReadData("Select tSanPham.MaSP,TenHang,tChiTietHDB.SoLuong,ThanhTien from tChiTietHDB inner join" +
-                      " tHang on tSanPham.MaSP=tChiTietHDB.MaHang where MaHoaDonBan='" + txtMaHD.Text + "'");*/
-				LoadData();
-
-			}
+			
 		}
 
 		private void btnTim_Click(object sender, EventArgs e)
@@ -403,21 +366,18 @@ namespace BaiTapLon.Forms
 					txtTenKH.Text = dtKhach.Rows[0]["TenKH"].ToString();
 					txtDiaChi.Text = dtKhach.Rows[0]["DiaChi"].ToString();
 					txtDienThoai.Text = dtKhach.Rows[0]["SDT"].ToString();
+					//txtGiamGia.Text = dtKhach.Rows[0]["GiamGia"].ToString();
 				}
 
-				txtTongTien.Text = dtHD.Rows[0]["TongTien"].ToString();
-				double tt = double.Parse(txtTongTien.Text);
-				label1.Text = NumberToText(tt);
-
-				/*   dgvHoaDonHang.DataSource = data.ReadData("Select tSanPham.MaSP,TenHang,tChiTietHDB.SoLuong,ThanhTien from tChiTietHDB inner join" +
-                       " tHang on tSanPham.MaSP=tChiTietHDB.MaHang where MaHoaDonBan='" + txtMaHD.Text + "'");*/
+				DataTable dttt = data.ReadData("SELECT TongTien FROM tHoaDonBan WHERE MaHDB = N'" + txtMaHD.Text + "'");
+				txtTongTien.Text = dttt.Rows[0]["TongTien"].ToString();
+				label1.Text = NumberToText(double.Parse(txtTongTien.Text));
 				LoadData();
+				//btnXoa.Enabled = true;
 			
-				
-				btnHuy.Enabled = true;
+				btnLuu.Enabled = true;
 				btnIn.Enabled = true;
-				btnThem.Enabled = false;
-				btnLuu.Enabled = false;
+				cbbTimMaHD.SelectedIndex = -1;
 			}
 		}
 
@@ -427,6 +387,7 @@ namespace BaiTapLon.Forms
 			txtTenSP.Text = dtvHDB.CurrentRow.Cells["TenSP"].Value.ToString();
 			txtDonGia.Text = dtvHDB.CurrentRow.Cells["DonGiaBan"].Value.ToString();
 			txtSoLuong.Text = dtvHDB.CurrentRow.Cells["SLBan"].Value.ToString();
+			txtGiamGia.Text = dtvHDB.CurrentRow.Cells["GiamGia"].Value.ToString() ;
 			double DonGia, soluong;
 			soluong = Convert.ToDouble(txtSoLuong.Text);
 			DonGia = double.Parse(txtDonGia.Text);
@@ -484,7 +445,7 @@ namespace BaiTapLon.Forms
 
 			// -12345678.3445435 => "-12345678"
 			string sNumber = inputNumber.ToString("#");
-			double number = Convert.ToDouble(sNumber);
+			double number = Double.Parse(sNumber);
 			if (number < 0)
 			{
 				number = -number;
@@ -562,6 +523,36 @@ namespace BaiTapLon.Forms
 			result = result.Trim();
 			if (isNegative) result = "Âm " + result;
 			return result + (suffix ? " đồng chẵn" : "");
+		}
+
+		private void dtvHDB_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+		{
+			if (MessageBox.Show("Bạn không muốn mua sản phẩm này à?", "Yes/No", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+				//Cập nhật lại số lượng trong bảng hàng
+				string maHang = dtvHDB.CurrentRow.Cells[0].Value.ToString();
+				//lay ra sp xoa
+				DataTable dtSP = data.ReadData("Select * from tSanPham where MaSP ='" + maHang + "'");
+				int slcon = int.Parse(dtSP.Rows[0]["SoLuong"].ToString()) +
+					int.Parse(dtvHDB.CurrentRow.Cells[3].Value.ToString());
+				//cap nhat lai so luong vao bang sp
+				data.UpdateData("Update tSanPham set SoLuong=" + slcon + " where MaSP ='" + maHang + "'");
+				//Tinh lai tong tien hoa don 
+				double tongtien = double.Parse(txtTongTien.Text) - double.Parse(dtvHDB.CurrentRow.Cells[6].Value.ToString());
+				data.UpdateData("update tHoaDonBan set TongTien='" + tongtien.ToString() + "' where MaHDB='" + txtMaHD.Text + "'");
+				txtTongTien.Text = tongtien.ToString();
+				//Xóa chi tiết 
+				data.UpdateData("delete tChiTietHDB where MaHDB='" + txtMaHD.Text + "' and MaSP='" + maHang + "'");
+				//Load lại dataGridview
+				dtvHDB.DataSource = data.ReadData("Select tSanPham.MaSP,TenSP,tChiTietHDB.SoLuong,giamgia,ThanhTien from tChiTietHDB inner join" +
+				  " tHang on tSanPham.MaSP=tChiTietHDB.MaHang where MaHoaDonBan='" + txtMaHD.Text + "'");
+
+				ResetValue();
+				LoadData();
+				
+				btnIn.Enabled = false;
+			}
+
 		}
 	}
 }
