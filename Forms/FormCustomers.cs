@@ -44,7 +44,9 @@ namespace BaiTapLon.Forms
 		}
 		void LoadData()
 		{
-			DataTable dtChiTiet = data.ReadData("Select MaKh,TenKh,SDT,DiaChi from tKhachHang");
+            LoadTheme();
+
+            DataTable dtChiTiet = data.ReadData("Select MaKh,TenKh,SDT,DiaChi from tKhachHang");
 			dtvKH.DataSource = dtChiTiet;
 
 			dtvKH.Columns[0].Width = 150;
@@ -65,6 +67,7 @@ namespace BaiTapLon.Forms
 		private void FormCustomers_Load(object sender, EventArgs e)
         {
 			LoadData();
+			LoadTheme();
 			btnThem.Enabled = true;
 			btnLuu.Enabled = false;		
 			txtMaKH.ReadOnly = true;

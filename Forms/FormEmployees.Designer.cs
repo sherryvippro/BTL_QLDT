@@ -49,6 +49,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.grbPicture = new System.Windows.Forms.GroupBox();
+            this.btnChoosePic = new System.Windows.Forms.Button();
             this.ptrImg = new System.Windows.Forms.PictureBox();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
             this.grbEmployees.SuspendLayout();
@@ -280,6 +281,7 @@
             // grbPicture
             // 
             this.grbPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grbPicture.Controls.Add(this.btnChoosePic);
             this.grbPicture.Controls.Add(this.ptrImg);
             this.grbPicture.Location = new System.Drawing.Point(858, 0);
             this.grbPicture.Name = "grbPicture";
@@ -288,11 +290,24 @@
             this.grbPicture.TabStop = false;
             this.grbPicture.Text = "Hình ảnh";
             // 
+            // btnChoosePic
+            // 
+            this.btnChoosePic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChoosePic.FlatAppearance.BorderSize = 0;
+            this.btnChoosePic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChoosePic.Location = new System.Drawing.Point(150, 237);
+            this.btnChoosePic.Name = "btnChoosePic";
+            this.btnChoosePic.Size = new System.Drawing.Size(120, 44);
+            this.btnChoosePic.TabIndex = 2;
+            this.btnChoosePic.Text = "Chọn";
+            this.btnChoosePic.UseVisualStyleBackColor = true;
+            this.btnChoosePic.Click += new System.EventHandler(this.btnChoosePic_Click);
+            // 
             // ptrImg
             // 
-            this.ptrImg.Location = new System.Drawing.Point(49, 31);
+            this.ptrImg.Location = new System.Drawing.Point(43, 34);
             this.ptrImg.Name = "ptrImg";
-            this.ptrImg.Size = new System.Drawing.Size(268, 253);
+            this.ptrImg.Size = new System.Drawing.Size(227, 197);
             this.ptrImg.TabIndex = 0;
             this.ptrImg.TabStop = false;
             // 
@@ -304,6 +319,7 @@
             this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployees.Location = new System.Drawing.Point(0, 334);
             this.dgvEmployees.Name = "dgvEmployees";
+            this.dgvEmployees.ReadOnly = true;
             this.dgvEmployees.RowHeadersWidth = 62;
             this.dgvEmployees.RowTemplate.Height = 28;
             this.dgvEmployees.Size = new System.Drawing.Size(1175, 252);
@@ -361,5 +377,6 @@
         private System.Windows.Forms.GroupBox grbPicture;
         private System.Windows.Forms.PictureBox ptrImg;
         private System.Windows.Forms.DataGridView dgvEmployees;
+        private System.Windows.Forms.Button btnChoosePic;
     }
 }

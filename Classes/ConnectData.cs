@@ -11,7 +11,7 @@ namespace BaiTapLon.Classes
     internal class ConnectData
     {
         //Khai báo biến toàn cục, bạn phải thay đổi chuối kết nối phù hợp
-        string strConnect = "Data Source=DESKTOP-HP034J7\\SQLEXPRESS;DataBase=QLDT;User ID=sa;Password=123;Integrated Security=false";
+        string strConnect = "Data Source=DuongHang;DataBase=QLDT;User ID=sa;Password=123;Integrated Security=false";
         SqlConnection sqlConnect = null;
         //Phương thức mở kết nối
         void OpenConnect()

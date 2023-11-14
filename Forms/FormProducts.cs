@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BaiTapLon.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace BaiTapLon.Forms
     {
         DatabaseProcess dtBase = new DatabaseProcess();
         private string ptrFileName = "";
+        private string query = "Select masp, tensp, soluong, dongianhap, dongiaban, mahang, mau, anh, ghichu from tSanPham where soluong > 0 and mahang > ''";
 
         public FormProducts()
         {
@@ -43,7 +45,7 @@ namespace BaiTapLon.Forms
         {
             LoadTheme();
             grbSearchProduct.Visible = false;
-            DataTable dataTable = dtBase.Select("Select masp, tensp, soluong, dongianhap, dongiaban, mahang, mau, anh, ghichu from tSanPham");
+            DataTable dataTable = dtBase.Select(query);
             dgvProducts.DataSource = dataTable;
             dgvProducts.Columns[0].HeaderText = "Mã SP";
             dgvProducts.Columns[1].HeaderText = "Tên SP";
@@ -70,9 +72,13 @@ namespace BaiTapLon.Forms
         }
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
+
             ResetProducts();
             ProductsEnabled();
-            txtMaDT.Focus();
+
+            txtMaDT.Text = dtBase.SinhMaTuDong("tsanpham", "masp", "SP");
+            txtTenDT.Focus();
+
             btnEditProduct.Enabled = false;
             btnClearProduct.Enabled = false;
             btnSkipProduct.Enabled = true;
@@ -139,6 +145,7 @@ namespace BaiTapLon.Forms
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 ptrImage.Image = Image.FromFile(ofd.FileName);
+                ptrFileName = Path.GetFileName(ofd.FileName);
             }
         }
 
@@ -170,8 +177,8 @@ namespace BaiTapLon.Forms
                         dtBase.Update("insert into tsanpham(masp, tensp, soluong, dongianhap, dongiaban, anh, mahang, model, mau, ghichu) " +
                             "values('" + txtMaDT.Text + "', N'" + txtTenDT.Text + "', N'" + txtSoLuong.Text + "'," +
                             " '" + txtGiaNhap.Text + "', '" + txtGiaBan.Text + "', '" + ptrFileName + "', '" + cboTenHang.SelectedValue + "', N'', N'" + txtColor.Text + "', N'" + txtGhiChu.Text + "')");
-                        dgvProducts.DataSource = dtBase.Select("Select masp, tensp, soluong, dongianhap, dongiaban, mahang, mau, anh, ghichu from tSanPham");
-						ResetProducts();
+                        dgvProducts.DataSource = dtBase.Select(query);
+                        ResetProducts();
                     }
 
                 }
@@ -180,8 +187,8 @@ namespace BaiTapLon.Forms
             if(btnEditProduct.Enabled == true)
             {
                 dtBase.Update("update tsanpham set soluong = '" + txtSoLuong.Text + "', dongianhap = " + txtGiaNhap.Text + ", dongiaban = " + txtGiaBan.Text + ", mau = '" + txtColor.Text + "', ghichu= N'" +
-                        txtGhiChu.Text + "', Anh = N'" + ptrFileName + "' where MaHang = '" + txtMaDT.Text + "'");
-                dgvProducts.DataSource = dtBase.Select("Select masp, tensp, soluong, dongianhap, dongiaban, mahang, mau, anh, ghichu from tSanPham");
+                        txtGhiChu.Text + "', Anh = N'" + ptrFileName + "' where masp = '" + txtMaDT.Text + "'");
+                dgvProducts.DataSource = dtBase.Select(query);
 				ResetProducts();
             }
             dtBase.CloseConn();
@@ -198,7 +205,7 @@ namespace BaiTapLon.Forms
             btnClearProduct.Enabled = false;
             btnAddProduct.Enabled = true;
             grbSearchProduct.Visible = false;
-            dgvProducts.DataSource = dtBase.Select("Select masp, tensp, soluong, dongianhap, dongiaban, mahang, mau, anh, ghichu from tSanPham");
+            dgvProducts.DataSource = dtBase.Select(query);
 
         }
 
@@ -215,8 +222,8 @@ namespace BaiTapLon.Forms
             if (MessageBox.Show("Bạn có muốn xóa " + dgvProducts.CurrentRow.Cells[1].Value.ToString() + " không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 dtBase.OpenConn();
-                dtBase.Update("delete from tsanpham where masp ='" + dgvProducts.CurrentRow.Cells[0].Value.ToString() + "'");
-                dgvProducts.DataSource = dtBase.Select("Select masp, tensp, soluong, dongianhap, dongiaban, mahang, mau, anh, ghichu from tSanPham");
+                dtBase.Update("update tsanpham set soluong = 0 where masp ='" + dgvProducts.CurrentRow.Cells[0].Value.ToString() + "'");
+                dgvProducts.DataSource = dtBase.Select(query);
 
 				ResetProducts();
                 dtBase.CloseConn();
@@ -266,7 +273,7 @@ namespace BaiTapLon.Forms
             string mahang = "";
             DataTable dt = dtBase.Select("select masp, tensp, soluong, dongianhap, dongiaban, mahang, mau, anh, ghichu from tsanpham where masp like '%" + txtMaDTSearch.Text + "%'"
                 + "and tensp like N'%" + txtTenDTSearch.Text + "%' and mahang like '%" + mahang + "%' and mau like N'%" +
-                txtMauSearch.Text + "%'");
+                txtMauSearch.Text + "%' and soluong > 0");
             if(dt.Rows.Count == 0)
             {
                 MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -330,5 +337,6 @@ namespace BaiTapLon.Forms
                 txtMauSearch.Text = "";
             }
         }
+
     }
 }

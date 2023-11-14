@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,8 @@ namespace BaiTapLon.Forms
                     btns.ForeColor = Color.White;
                     btns.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+					btnChoosePic.BackColor = ThemeColor.PrimaryColor;
+					btnChoosePic.ForeColor = Color.White;
                 }
             }
         }
@@ -44,6 +47,10 @@ namespace BaiTapLon.Forms
 			dgvEmployees.Columns[4].HeaderText = "Ghi chú";
 			dgvEmployees.Columns[5].HeaderText = "Ảnh";
 			dgvEmployees.Columns[6].HeaderText = "Địa chỉ";
+
+			dgvEmployees.Columns[1].Width = 200;
+			dgvEmployees.Columns[2].Width = 150;
+			dgvEmployees.Columns[3].Width = 200;
             if (formMain.phanquyen == "quanly")
             {
                 formMain.PhanQuyen(btnAdd, btnSave, btnEdit, btnClear, btnSkip, true);
@@ -57,6 +64,7 @@ namespace BaiTapLon.Forms
             btnClear.Enabled = false;
             btnSave.Enabled = false;
             btnSkip.Enabled = false;
+			btnChoosePic.Enabled = false;
         }
 		private void ResetEmployees()
 		{
@@ -123,11 +131,13 @@ namespace BaiTapLon.Forms
 		{
 			ResetEmployees();
 			EmployeesEnabled();
-			txtMaNV.Focus();
+			txtTenNV.Focus();
+			txtMaNV.Text = dtBase.SinhMaTuDong("tnhanvien", "manv", "NV");
 			btnEdit.Enabled = false;
 			btnClear.Enabled = false;
 			btnSkip.Enabled = true;
 			btnSave.Enabled = true;
+			btnChoosePic.Enabled = true;
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)
@@ -156,7 +166,7 @@ namespace BaiTapLon.Forms
 					{
 						dtBase.Update("insert into tnhanvien(manv, tennv, ngaysinh, sdt, ghichu, anh, diachi) " +
 							"values('" + txtMaNV.Text + "', N'" + txtTenNV.Text + "', N'" + dtpDoB.Text + "'," +
-							" '" + txtSDT.Text + "', '" + txtNote.Text + "', '" + ptrFileName + "', '" + txtDchi.Text + "'");
+							" '" + txtSDT.Text + "', N'" + txtNote.Text + "', '" + ptrFileName + "', N'" + txtDchi.Text + "')");
 						dgvEmployees.DataSource = dtBase.Select("Select * from tnhanvien");
 						ResetEmployees();
 					}
@@ -165,15 +175,15 @@ namespace BaiTapLon.Forms
 			}
 			if (btnEdit.Enabled == true)
 			{
-				dtBase.Update("update tnhanvien set tennv = '" + txtTenNV.Text + "', ngaysinh = " + dtpDoB.Text + ", sdt = " + txtSDT.Text + ", ghichu= N'" +
-						txtNote.Text + "', Anh = N'" + ptrFileName + "', diachi = N'" + txtDchi.Text + "' where manv = '" + txtMaNV.Text + "'");
-				dgvEmployees.DataSource = dtBase.Select("select * from tnhanvien");
+                dtBase.Update("update tnhanvien set tennv = N'" + txtTenNV.Text + "', ngaysinh = '" + dtpDoB.Text + "', sdt = '" + txtSDT.Text + "', ghichu = N'" + txtNote.Text + "', anh = '" +
+                        ptrFileName + "', diachi = N'" + txtDchi.Text + "' where manv = '" + txtMaNV.Text + "'");
+                dgvEmployees.DataSource = dtBase.Select("select * from tnhanvien");
 				ResetEmployees();
 			}
 			dtBase.CloseConn();
 			btnEdit.Enabled = false;
 			btnClear.Enabled = false;
-			btnSkip.Enabled = false;
+			btnSkip.Enabled = true;
 		}
 
 		private void btnEdit_Click(object sender, EventArgs e)
@@ -182,6 +192,7 @@ namespace BaiTapLon.Forms
 			EditEmployees();
 			btnSave.Enabled = true;
 			btnSkip.Enabled = true;
+			btnChoosePic.Enabled = true;
 		}
 
 		private void btnClear_Click(object sender, EventArgs e)
@@ -195,6 +206,7 @@ namespace BaiTapLon.Forms
 				ResetEmployees();
 				dtBase.CloseConn();
 			}
+			btnAdd.Enabled = true;
 		}
 
 		private void btnSkip_Click(object sender, EventArgs e)
@@ -206,5 +218,20 @@ namespace BaiTapLon.Forms
 			btnClear.Enabled = false;
 			btnAdd.Enabled = true;
 		}
-	}
+
+        private void btnChoosePic_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "JPEG images|*.jpg|Bitmap images|*.bmp|All Files|*.*",
+                FilterIndex = 3
+            };
+            ofd.Title = "Chọn ảnh để hiển thị";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                ptrImg.Image = Image.FromFile(ofd.FileName);
+				ptrFileName = Path.GetFileName(ofd.FileName);
+            }
+        }
+    }
 }

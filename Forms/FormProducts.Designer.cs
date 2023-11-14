@@ -32,12 +32,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.grbPicture = new System.Windows.Forms.GroupBox();
             this.btnChoosePic = new System.Windows.Forms.Button();
-            this.ptrImage = new System.Windows.Forms.PictureBox();
-            this.btnSkipProduct = new System.Windows.Forms.Button();
-            this.btnAddProduct = new System.Windows.Forms.Button();
-            this.btnSaveProduct = new System.Windows.Forms.Button();
-            this.btnEditProduct = new System.Windows.Forms.Button();
-            this.btnClearProduct = new System.Windows.Forms.Button();
             this.grbProductInfo = new System.Windows.Forms.GroupBox();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.cboTenHang = new System.Windows.Forms.ComboBox();
@@ -56,7 +50,6 @@
             this.txtMaDT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grbSearchProduct = new System.Windows.Forms.GroupBox();
-            this.btnS = new System.Windows.Forms.Button();
             this.txtMauSearch = new System.Windows.Forms.TextBox();
             this.cbMau = new System.Windows.Forms.CheckBox();
             this.txtHangSearch = new System.Windows.Forms.TextBox();
@@ -65,13 +58,20 @@
             this.cbTenDT = new System.Windows.Forms.CheckBox();
             this.txtMaDTSearch = new System.Windows.Forms.TextBox();
             this.cbMaDT = new System.Windows.Forms.CheckBox();
-            this.btnSearchProduct = new System.Windows.Forms.Button();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.btnSearchProduct = new System.Windows.Forms.Button();
+            this.ptrImage = new System.Windows.Forms.PictureBox();
+            this.btnS = new System.Windows.Forms.Button();
+            this.btnSkipProduct = new System.Windows.Forms.Button();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.btnSaveProduct = new System.Windows.Forms.Button();
+            this.btnEditProduct = new System.Windows.Forms.Button();
+            this.btnClearProduct = new System.Windows.Forms.Button();
             this.grbPicture.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptrImage)).BeginInit();
             this.grbProductInfo.SuspendLayout();
             this.grbSearchProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrImage)).BeginInit();
             this.SuspendLayout();
             // 
             // grbPicture
@@ -98,110 +98,6 @@
             this.btnChoosePic.Text = "Chọn";
             this.btnChoosePic.UseVisualStyleBackColor = true;
             this.btnChoosePic.Click += new System.EventHandler(this.btnChoosePic_Click);
-            // 
-            // ptrImage
-            // 
-            this.ptrImage.Location = new System.Drawing.Point(28, 46);
-            this.ptrImage.Name = "ptrImage";
-            this.ptrImage.Size = new System.Drawing.Size(223, 210);
-            this.ptrImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptrImage.TabIndex = 0;
-            this.ptrImage.TabStop = false;
-            // 
-            // btnSkipProduct
-            // 
-            this.btnSkipProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSkipProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSkipProduct.FlatAppearance.BorderSize = 0;
-            this.btnSkipProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSkipProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnSkipProduct.Image")));
-            this.btnSkipProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSkipProduct.Location = new System.Drawing.Point(1280, 765);
-            this.btnSkipProduct.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnSkipProduct.Name = "btnSkipProduct";
-            this.btnSkipProduct.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnSkipProduct.Size = new System.Drawing.Size(171, 50);
-            this.btnSkipProduct.TabIndex = 5;
-            this.btnSkipProduct.Text = "   Bỏ qua";
-            this.btnSkipProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSkipProduct.UseVisualStyleBackColor = true;
-            this.btnSkipProduct.Click += new System.EventHandler(this.btnSkipProduct_Click);
-            // 
-            // btnAddProduct
-            // 
-            this.btnAddProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddProduct.FlatAppearance.BorderSize = 0;
-            this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnAddProduct.Image")));
-            this.btnAddProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddProduct.Location = new System.Drawing.Point(511, 765);
-            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnAddProduct.Size = new System.Drawing.Size(171, 50);
-            this.btnAddProduct.TabIndex = 4;
-            this.btnAddProduct.Text = "   Thêm";
-            this.btnAddProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddProduct.UseVisualStyleBackColor = true;
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
-            // 
-            // btnSaveProduct
-            // 
-            this.btnSaveProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveProduct.FlatAppearance.BorderSize = 0;
-            this.btnSaveProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveProduct.Image")));
-            this.btnSaveProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveProduct.Location = new System.Drawing.Point(704, 765);
-            this.btnSaveProduct.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnSaveProduct.Name = "btnSaveProduct";
-            this.btnSaveProduct.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnSaveProduct.Size = new System.Drawing.Size(171, 50);
-            this.btnSaveProduct.TabIndex = 3;
-            this.btnSaveProduct.Text = "   Lưu";
-            this.btnSaveProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSaveProduct.UseVisualStyleBackColor = true;
-            this.btnSaveProduct.Click += new System.EventHandler(this.btnSaveProduct_Click);
-            // 
-            // btnEditProduct
-            // 
-            this.btnEditProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditProduct.FlatAppearance.BorderSize = 0;
-            this.btnEditProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnEditProduct.Image")));
-            this.btnEditProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditProduct.Location = new System.Drawing.Point(896, 765);
-            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnEditProduct.Name = "btnEditProduct";
-            this.btnEditProduct.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnEditProduct.Size = new System.Drawing.Size(171, 50);
-            this.btnEditProduct.TabIndex = 2;
-            this.btnEditProduct.Text = "   Sửa";
-            this.btnEditProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditProduct.UseVisualStyleBackColor = true;
-            this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
-            // 
-            // btnClearProduct
-            // 
-            this.btnClearProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClearProduct.FlatAppearance.BorderSize = 0;
-            this.btnClearProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnClearProduct.Image")));
-            this.btnClearProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClearProduct.Location = new System.Drawing.Point(1089, 765);
-            this.btnClearProduct.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnClearProduct.Name = "btnClearProduct";
-            this.btnClearProduct.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnClearProduct.Size = new System.Drawing.Size(171, 50);
-            this.btnClearProduct.TabIndex = 1;
-            this.btnClearProduct.Text = "   Xóa";
-            this.btnClearProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClearProduct.UseVisualStyleBackColor = true;
-            this.btnClearProduct.Click += new System.EventHandler(this.btnClearProduct_Click);
             // 
             // grbProductInfo
             // 
@@ -382,24 +278,6 @@
             this.grbSearchProduct.TabStop = false;
             this.grbSearchProduct.Text = "Tìm kiếm";
             // 
-            // btnS
-            // 
-            this.btnS.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnS.FlatAppearance.BorderSize = 0;
-            this.btnS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnS.Image = ((System.Drawing.Image)(resources.GetObject("btnS.Image")));
-            this.btnS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnS.Location = new System.Drawing.Point(1386, 34);
-            this.btnS.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnS.Name = "btnS";
-            this.btnS.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnS.Size = new System.Drawing.Size(71, 50);
-            this.btnS.TabIndex = 20;
-            this.btnS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnS.UseVisualStyleBackColor = true;
-            this.btnS.Click += new System.EventHandler(this.btnS_Click);
-            // 
             // txtMauSearch
             // 
             this.txtMauSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -488,6 +366,20 @@
             this.cbMaDT.UseVisualStyleBackColor = true;
             this.cbMaDT.CheckedChanged += new System.EventHandler(this.ischecked);
             // 
+            // dgvProducts
+            // 
+            this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.Location = new System.Drawing.Point(3, 487);
+            this.dgvProducts.MultiSelect = false;
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.RowHeadersWidth = 62;
+            this.dgvProducts.RowTemplate.Height = 28;
+            this.dgvProducts.Size = new System.Drawing.Size(1462, 221);
+            this.dgvProducts.TabIndex = 19;
+            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick_1);
+            // 
             // btnSearchProduct
             // 
             this.btnSearchProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -507,19 +399,127 @@
             this.btnSearchProduct.UseVisualStyleBackColor = true;
             this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click_1);
             // 
-            // dgvProducts
+            // ptrImage
             // 
-            this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(3, 487);
-            this.dgvProducts.MultiSelect = false;
-            this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.ReadOnly = true;
-            this.dgvProducts.RowHeadersWidth = 62;
-            this.dgvProducts.RowTemplate.Height = 28;
-            this.dgvProducts.Size = new System.Drawing.Size(1462, 221);
-            this.dgvProducts.TabIndex = 19;
-            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick_1);
+            this.ptrImage.Location = new System.Drawing.Point(28, 46);
+            this.ptrImage.Name = "ptrImage";
+            this.ptrImage.Size = new System.Drawing.Size(223, 210);
+            this.ptrImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptrImage.TabIndex = 0;
+            this.ptrImage.TabStop = false;
+            // 
+            // btnS
+            // 
+            this.btnS.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnS.FlatAppearance.BorderSize = 0;
+            this.btnS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnS.Image = ((System.Drawing.Image)(resources.GetObject("btnS.Image")));
+            this.btnS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnS.Location = new System.Drawing.Point(1386, 34);
+            this.btnS.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnS.Name = "btnS";
+            this.btnS.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnS.Size = new System.Drawing.Size(71, 50);
+            this.btnS.TabIndex = 20;
+            this.btnS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnS.UseVisualStyleBackColor = true;
+            this.btnS.Click += new System.EventHandler(this.btnS_Click);
+            // 
+            // btnSkipProduct
+            // 
+            this.btnSkipProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSkipProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSkipProduct.FlatAppearance.BorderSize = 0;
+            this.btnSkipProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSkipProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnSkipProduct.Image")));
+            this.btnSkipProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSkipProduct.Location = new System.Drawing.Point(1280, 765);
+            this.btnSkipProduct.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnSkipProduct.Name = "btnSkipProduct";
+            this.btnSkipProduct.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnSkipProduct.Size = new System.Drawing.Size(171, 50);
+            this.btnSkipProduct.TabIndex = 5;
+            this.btnSkipProduct.Text = "   Bỏ qua";
+            this.btnSkipProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSkipProduct.UseVisualStyleBackColor = true;
+            this.btnSkipProduct.Click += new System.EventHandler(this.btnSkipProduct_Click);
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddProduct.FlatAppearance.BorderSize = 0;
+            this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnAddProduct.Image")));
+            this.btnAddProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddProduct.Location = new System.Drawing.Point(511, 765);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnAddProduct.Size = new System.Drawing.Size(171, 50);
+            this.btnAddProduct.TabIndex = 4;
+            this.btnAddProduct.Text = "   Thêm";
+            this.btnAddProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            // 
+            // btnSaveProduct
+            // 
+            this.btnSaveProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveProduct.FlatAppearance.BorderSize = 0;
+            this.btnSaveProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveProduct.Image")));
+            this.btnSaveProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveProduct.Location = new System.Drawing.Point(704, 765);
+            this.btnSaveProduct.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnSaveProduct.Name = "btnSaveProduct";
+            this.btnSaveProduct.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnSaveProduct.Size = new System.Drawing.Size(171, 50);
+            this.btnSaveProduct.TabIndex = 3;
+            this.btnSaveProduct.Text = "   Lưu";
+            this.btnSaveProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSaveProduct.UseVisualStyleBackColor = true;
+            this.btnSaveProduct.Click += new System.EventHandler(this.btnSaveProduct_Click);
+            // 
+            // btnEditProduct
+            // 
+            this.btnEditProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditProduct.FlatAppearance.BorderSize = 0;
+            this.btnEditProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnEditProduct.Image")));
+            this.btnEditProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditProduct.Location = new System.Drawing.Point(896, 765);
+            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnEditProduct.Name = "btnEditProduct";
+            this.btnEditProduct.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnEditProduct.Size = new System.Drawing.Size(171, 50);
+            this.btnEditProduct.TabIndex = 2;
+            this.btnEditProduct.Text = "   Sửa";
+            this.btnEditProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditProduct.UseVisualStyleBackColor = true;
+            this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
+            // 
+            // btnClearProduct
+            // 
+            this.btnClearProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClearProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClearProduct.FlatAppearance.BorderSize = 0;
+            this.btnClearProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnClearProduct.Image")));
+            this.btnClearProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClearProduct.Location = new System.Drawing.Point(1089, 765);
+            this.btnClearProduct.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnClearProduct.Name = "btnClearProduct";
+            this.btnClearProduct.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnClearProduct.Size = new System.Drawing.Size(171, 50);
+            this.btnClearProduct.TabIndex = 1;
+            this.btnClearProduct.Text = "   Xóa";
+            this.btnClearProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClearProduct.UseVisualStyleBackColor = true;
+            this.btnClearProduct.Click += new System.EventHandler(this.btnClearProduct_Click);
             // 
             // FormProducts
             // 
@@ -541,12 +541,12 @@
             this.Text = "SẢN PHẨM";
             this.Load += new System.EventHandler(this.FormProducts_Load);
             this.grbPicture.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ptrImage)).EndInit();
             this.grbProductInfo.ResumeLayout(false);
             this.grbProductInfo.PerformLayout();
             this.grbSearchProduct.ResumeLayout(false);
             this.grbSearchProduct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrImage)).EndInit();
             this.ResumeLayout(false);
 
         }

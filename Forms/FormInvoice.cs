@@ -22,7 +22,21 @@ namespace BaiTapLon.Forms
 		{
 			InitializeComponent();
 		}
-		void ResetValue()
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btns.BackColor = ThemeColor.PrimaryColor;
+                    btns.ForeColor = Color.White;
+                    btns.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+        }
+        void ResetValue()
 		{
 			DateTime dt = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
 			txtMaHD.Text = "";
@@ -73,6 +87,7 @@ namespace BaiTapLon.Forms
 		private void FormInvoice_Load(object sender, EventArgs e)
 		{
 			LoadData();
+			LoadTheme();
 			btnThem.Enabled = true;
 			btnLuu.Enabled = false;
 			btnIn.Enabled = false;

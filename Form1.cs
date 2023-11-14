@@ -155,7 +155,7 @@ namespace BaiTapLon
 
         private void btnHangSX_Click(object sender, EventArgs e)
         {
-            
+            OpenChildForm(new formHangSX(), sender);
         }
 
         private void formMain_FormClosing(object sender, FormClosingEventArgs e)
