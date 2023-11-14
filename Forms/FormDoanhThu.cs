@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BaiTapLon.Forms
 {
@@ -23,7 +23,7 @@ namespace BaiTapLon.Forms
 		
 		void LoadDataHD()
 		{
-			DataTable dtChiTiet = data.ReadData("Select maHDB,ngaylaphd,tongtien from tHoaDonBan");
+            System.Data.DataTable dtChiTiet = data.ReadData("Select maHDB,ngaylaphd,tongtien from tHoaDonBan");
 			dtvHD_DT.DataSource = dtChiTiet;
 			/*dtvHD_DT.Columns[0].Width = 150;
 			dtvHD_DT.Columns[1].Width = 190;
@@ -37,6 +37,8 @@ namespace BaiTapLon.Forms
 				cbbThang.Items.Add(i);
 			}
 
+
+
 		}
 
 		private void FormDoanhThu_Load(object sender, EventArgs e)
@@ -44,16 +46,43 @@ namespace BaiTapLon.Forms
 			LoadDataHD();
 			cbbThang.SelectedValue = -1;
 			cbbNam.SelectedValue = -1;
-		}
+            System.Data.DataTable dtTable = new System.Data.DataTable();
+			double tongtien;
+			string money = "";
+			dtTable.Columns.Add("tongtien", typeof(double));
+            for (int i = 1; i <= 12; i++)
+            {
+                dtTable = data.ReadData("select sum(tongtien) as tongtien from thoadonban where month(ngaylaphd) = '" + i + "'");
+				if (dtTable.Rows.Count > 0 && dtTable.Rows[0]["tongtien"].ToString() != "")
+				{
+                    tongtien = Convert.ToDouble(dtTable.Rows[0]["tongtien"]);
+				}
+				else tongtien = 0;
+				if(tongtien == 0)
+				{
+					money = "";
+				} else
+				{
+					money = tongtien.ToString();
+				}
+                chart1.Series["chartDoanhThu"].Points.Add(tongtien);
+				/*chart1.Series["chartDoanhThu"].Points[i - 1].Label = money;*/
+				chart1.Series["chartDoanhThu"].Points[i - 1].Color = Color.Blue;
+                chart1.Series["chartDoanhThu"].Points[i - 1].AxisLabel = "Tháng " + i;
+            }
 
-		/*private void cbbThang_SelectedValueChanged(object sender, EventArgs e)
+
+
+        }
+
+        /*private void cbbThang_SelectedValueChanged(object sender, EventArgs e)
 		{
 			//int cthang = Convert.ToInt32(cbbThang.SelectedItem);
 			data.UpdateData("SELECT mahdb, ngaylaphd, tongtien FROM thoadonban WHERE MONTH(ngaylaphd) = '"+cbbThang.SelectedItem.ToString()+"'");
 			LoadDataHD() ;
 		}*/
 
-		private void cbbNam_Click(object sender, EventArgs e)
+        private void cbbNam_Click(object sender, EventArgs e)
 		{
 			function.FillCombobox(cbbNam, data.ReadData("Select * from tHoaDonBan"), "year(NgaylapHD)", "year(ngaylaphd)");
 		}
@@ -88,5 +117,5 @@ namespace BaiTapLon.Forms
 		{
 			
 		}
-	}
+    }
 }

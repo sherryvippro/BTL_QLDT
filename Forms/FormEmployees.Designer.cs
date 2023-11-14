@@ -186,9 +186,11 @@
             // btnSkip
             // 
             this.btnSkip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSkip.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSkip.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSkip.FlatAppearance.BorderSize = 0;
             this.btnSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSkip.ForeColor = System.Drawing.Color.White;
             this.btnSkip.Image = ((System.Drawing.Image)(resources.GetObject("btnSkip.Image")));
             this.btnSkip.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSkip.Location = new System.Drawing.Point(988, 617);
@@ -199,15 +201,17 @@
             this.btnSkip.TabIndex = 10;
             this.btnSkip.Text = "   Bỏ qua";
             this.btnSkip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSkip.UseVisualStyleBackColor = true;
+            this.btnSkip.UseVisualStyleBackColor = false;
             this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.Location = new System.Drawing.Point(216, 617);
@@ -218,15 +222,17 @@
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "   Thêm";
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(410, 617);
@@ -237,15 +243,17 @@
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "   Lưu";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.BackColor = System.Drawing.Color.SteelBlue;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.Location = new System.Drawing.Point(603, 617);
@@ -256,15 +264,17 @@
             this.btnEdit.TabIndex = 7;
             this.btnEdit.Text = "   Sửa";
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnClear
             // 
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.BackColor = System.Drawing.Color.SteelBlue;
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClear.Location = new System.Drawing.Point(796, 617);
@@ -275,7 +285,7 @@
             this.btnClear.TabIndex = 6;
             this.btnClear.Text = "   Xóa";
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // grbPicture
@@ -292,15 +302,17 @@
             // 
             // btnChoosePic
             // 
+            this.btnChoosePic.BackColor = System.Drawing.Color.SteelBlue;
             this.btnChoosePic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChoosePic.FlatAppearance.BorderSize = 0;
             this.btnChoosePic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChoosePic.ForeColor = System.Drawing.Color.White;
             this.btnChoosePic.Location = new System.Drawing.Point(150, 237);
             this.btnChoosePic.Name = "btnChoosePic";
             this.btnChoosePic.Size = new System.Drawing.Size(120, 44);
             this.btnChoosePic.TabIndex = 2;
             this.btnChoosePic.Text = "Chọn";
-            this.btnChoosePic.UseVisualStyleBackColor = true;
+            this.btnChoosePic.UseVisualStyleBackColor = false;
             this.btnChoosePic.Click += new System.EventHandler(this.btnChoosePic_Click);
             // 
             // ptrImg

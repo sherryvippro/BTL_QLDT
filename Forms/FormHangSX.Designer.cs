@@ -99,9 +99,11 @@
             // btnS
             // 
             this.btnS.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnS.BackColor = System.Drawing.Color.SteelBlue;
             this.btnS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnS.FlatAppearance.BorderSize = 0;
             this.btnS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnS.ForeColor = System.Drawing.Color.White;
             this.btnS.Image = ((System.Drawing.Image)(resources.GetObject("btnS.Image")));
             this.btnS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnS.Location = new System.Drawing.Point(651, 41);
@@ -111,7 +113,7 @@
             this.btnS.Size = new System.Drawing.Size(71, 50);
             this.btnS.TabIndex = 20;
             this.btnS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnS.UseVisualStyleBackColor = true;
+            this.btnS.UseVisualStyleBackColor = false;
             this.btnS.Click += new System.EventHandler(this.btnS_Click);
             // 
             // txtTenHSearch
@@ -134,6 +136,7 @@
             this.cbTenH.TabIndex = 7;
             this.cbTenH.Text = "Tên hãng";
             this.cbTenH.UseVisualStyleBackColor = true;
+            this.cbTenH.CheckedChanged += new System.EventHandler(this.cbTenH_CheckedChanged);
             // 
             // txtMaHSearch
             // 
@@ -155,6 +158,7 @@
             this.cbMaH.TabIndex = 5;
             this.cbMaH.Text = "Mã hãng";
             this.cbMaH.UseVisualStyleBackColor = true;
+            this.cbMaH.CheckedChanged += new System.EventHandler(this.cbMaH_CheckedChanged);
             // 
             // txtTenHang
             // 
@@ -191,9 +195,11 @@
             // btnSearchHang
             // 
             this.btnSearchHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchHang.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSearchHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchHang.FlatAppearance.BorderSize = 0;
             this.btnSearchHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchHang.ForeColor = System.Drawing.Color.White;
             this.btnSearchHang.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchHang.Image")));
             this.btnSearchHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchHang.Location = new System.Drawing.Point(89, 574);
@@ -204,15 +210,17 @@
             this.btnSearchHang.TabIndex = 23;
             this.btnSearchHang.Text = "   Tìm kiếm";
             this.btnSearchHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSearchHang.UseVisualStyleBackColor = true;
+            this.btnSearchHang.UseVisualStyleBackColor = false;
             this.btnSearchHang.Click += new System.EventHandler(this.btnSearchHang_Click);
             // 
             // btnAddHang
             // 
             this.btnAddHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddHang.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAddHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddHang.FlatAppearance.BorderSize = 0;
             this.btnAddHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddHang.ForeColor = System.Drawing.Color.White;
             this.btnAddHang.Image = ((System.Drawing.Image)(resources.GetObject("btnAddHang.Image")));
             this.btnAddHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddHang.Location = new System.Drawing.Point(297, 574);
@@ -223,15 +231,17 @@
             this.btnAddHang.TabIndex = 22;
             this.btnAddHang.Text = "   Thêm";
             this.btnAddHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddHang.UseVisualStyleBackColor = true;
+            this.btnAddHang.UseVisualStyleBackColor = false;
             this.btnAddHang.Click += new System.EventHandler(this.btnAddHang_Click);
             // 
             // btnSaveHang
             // 
             this.btnSaveHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveHang.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSaveHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveHang.FlatAppearance.BorderSize = 0;
             this.btnSaveHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveHang.ForeColor = System.Drawing.Color.White;
             this.btnSaveHang.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveHang.Image")));
             this.btnSaveHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveHang.Location = new System.Drawing.Point(490, 574);
@@ -242,15 +252,17 @@
             this.btnSaveHang.TabIndex = 21;
             this.btnSaveHang.Text = "   Lưu";
             this.btnSaveHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSaveHang.UseVisualStyleBackColor = true;
+            this.btnSaveHang.UseVisualStyleBackColor = false;
             this.btnSaveHang.Click += new System.EventHandler(this.btnSaveHang_Click);
             // 
             // btnEditHang
             // 
             this.btnEditHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditHang.BackColor = System.Drawing.Color.SteelBlue;
             this.btnEditHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditHang.FlatAppearance.BorderSize = 0;
             this.btnEditHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditHang.ForeColor = System.Drawing.Color.White;
             this.btnEditHang.Image = ((System.Drawing.Image)(resources.GetObject("btnEditHang.Image")));
             this.btnEditHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditHang.Location = new System.Drawing.Point(682, 574);
@@ -261,15 +273,17 @@
             this.btnEditHang.TabIndex = 20;
             this.btnEditHang.Text = "   Sửa";
             this.btnEditHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditHang.UseVisualStyleBackColor = true;
+            this.btnEditHang.UseVisualStyleBackColor = false;
             this.btnEditHang.Click += new System.EventHandler(this.btnEditHang_Click);
             // 
             // btnClearHang
             // 
             this.btnClearHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClearHang.BackColor = System.Drawing.Color.SteelBlue;
             this.btnClearHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClearHang.FlatAppearance.BorderSize = 0;
             this.btnClearHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearHang.ForeColor = System.Drawing.Color.White;
             this.btnClearHang.Image = ((System.Drawing.Image)(resources.GetObject("btnClearHang.Image")));
             this.btnClearHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClearHang.Location = new System.Drawing.Point(875, 574);
@@ -280,15 +294,17 @@
             this.btnClearHang.TabIndex = 19;
             this.btnClearHang.Text = "   Xóa";
             this.btnClearHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClearHang.UseVisualStyleBackColor = true;
+            this.btnClearHang.UseVisualStyleBackColor = false;
             this.btnClearHang.Click += new System.EventHandler(this.btnClearHang_Click);
             // 
             // btnSkipHang
             // 
             this.btnSkipHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSkipHang.BackColor = System.Drawing.Color.SteelBlue;
             this.btnSkipHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSkipHang.FlatAppearance.BorderSize = 0;
             this.btnSkipHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSkipHang.ForeColor = System.Drawing.Color.White;
             this.btnSkipHang.Image = ((System.Drawing.Image)(resources.GetObject("btnSkipHang.Image")));
             this.btnSkipHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSkipHang.Location = new System.Drawing.Point(1067, 574);
@@ -299,7 +315,7 @@
             this.btnSkipHang.TabIndex = 19;
             this.btnSkipHang.Text = "   Bỏ qua";
             this.btnSkipHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSkipHang.UseVisualStyleBackColor = true;
+            this.btnSkipHang.UseVisualStyleBackColor = false;
             this.btnSkipHang.Click += new System.EventHandler(this.btnSkipHang_Click);
             // 
             // formHangSX

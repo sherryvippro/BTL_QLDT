@@ -41,17 +41,6 @@ namespace BaiTapLon
             btnClear.Visible = hien;
             btnSkip.Visible = hien;
         }
-        private Color SelectThemeColor()
-        {
-            int index = random.Next(ThemeColor.ColorList.Count);
-            while(tempIndex == index)
-            {
-                index = random.Next(ThemeColor.ColorList.Count);
-            }
-            tempIndex = index;
-            string color = ThemeColor.ColorList[index];
-            return ColorTranslator.FromHtml(color);
-        }
         private void ActiveButton(object sender)
         {
             if(sender != null)
@@ -59,12 +48,12 @@ namespace BaiTapLon
                 if(currentButton != (sender as Button))
                 {
                     DisableButton();
-                    Color color = SelectThemeColor();
+                    Color color = Color.SteelBlue;
                     currentButton = (sender as Button);
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    panelTitleBar.BackColor = color;
+                    
                     panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3); 
                     ThemeColor.PrimaryColor = color;
                     ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);

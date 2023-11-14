@@ -272,7 +272,7 @@
             this.lblHome.AutoSize = true;
             this.lblHome.Font = new System.Drawing.Font("MS Reference Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHome.ForeColor = System.Drawing.Color.White;
-            this.lblHome.Location = new System.Drawing.Point(47, 9);
+            this.lblHome.Location = new System.Drawing.Point(47, 10);
             this.lblHome.Name = "lblHome";
             this.lblHome.Size = new System.Drawing.Size(264, 49);
             this.lblHome.TabIndex = 0;

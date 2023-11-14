@@ -39,12 +39,12 @@
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtvKH = new System.Windows.Forms.DataGridView();
             this.btnBoQua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.dtvKH = new System.Windows.Forms.DataGridView();
             this.grbCustomers.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvKH)).BeginInit();
@@ -146,6 +146,106 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // btnBoQua
+            // 
+            this.btnBoQua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBoQua.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBoQua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBoQua.FlatAppearance.BorderSize = 0;
+            this.btnBoQua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBoQua.ForeColor = System.Drawing.Color.White;
+            this.btnBoQua.Image = ((System.Drawing.Image)(resources.GetObject("btnBoQua.Image")));
+            this.btnBoQua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBoQua.Location = new System.Drawing.Point(1043, 113);
+            this.btnBoQua.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnBoQua.Name = "btnBoQua";
+            this.btnBoQua.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnBoQua.Size = new System.Drawing.Size(171, 50);
+            this.btnBoQua.TabIndex = 10;
+            this.btnBoQua.Text = "   Bỏ qua";
+            this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBoQua.UseVisualStyleBackColor = false;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThem.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(270, 113);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnThem.Size = new System.Drawing.Size(171, 50);
+            this.btnThem.TabIndex = 9;
+            this.btnThem.Text = "   Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = false;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLuu.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLuu.FlatAppearance.BorderSize = 0;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(467, 113);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnLuu.Size = new System.Drawing.Size(171, 50);
+            this.btnLuu.TabIndex = 8;
+            this.btnLuu.Text = "   Lưu";
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLuu.UseVisualStyleBackColor = false;
+            // 
+            // btnSua
+            // 
+            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSua.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(659, 113);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnSua.Size = new System.Drawing.Size(171, 50);
+            this.btnSua.TabIndex = 7;
+            this.btnSua.Text = "   Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = false;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(852, 113);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnXoa.Size = new System.Drawing.Size(171, 50);
+            this.btnXoa.TabIndex = 6;
+            this.btnXoa.Text = "   Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = false;
+            // 
             // dtvKH
             // 
             this.dtvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -158,96 +258,6 @@
             this.dtvKH.TabIndex = 2;
             this.dtvKH.Click += new System.EventHandler(this.dtvKH_Click);
             // 
-            // btnBoQua
-            // 
-            this.btnBoQua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBoQua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBoQua.FlatAppearance.BorderSize = 0;
-            this.btnBoQua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBoQua.Image = ((System.Drawing.Image)(resources.GetObject("btnBoQua.Image")));
-            this.btnBoQua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBoQua.Location = new System.Drawing.Point(1043, 113);
-            this.btnBoQua.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnBoQua.Name = "btnBoQua";
-            this.btnBoQua.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnBoQua.Size = new System.Drawing.Size(171, 50);
-            this.btnBoQua.TabIndex = 10;
-            this.btnBoQua.Text = "   Bỏ qua";
-            this.btnBoQua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBoQua.UseVisualStyleBackColor = true;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThem.FlatAppearance.BorderSize = 0;
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(270, 113);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnThem.Size = new System.Drawing.Size(171, 50);
-            this.btnThem.TabIndex = 9;
-            this.btnThem.Text = "   Thêm";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = true;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLuu.FlatAppearance.BorderSize = 0;
-            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(467, 113);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnLuu.Size = new System.Drawing.Size(171, 50);
-            this.btnLuu.TabIndex = 8;
-            this.btnLuu.Text = "   Lưu";
-            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLuu.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(659, 113);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnSua.Size = new System.Drawing.Size(171, 50);
-            this.btnSua.TabIndex = 7;
-            this.btnSua.Text = "   Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoa.FlatAppearance.BorderSize = 0;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(852, 113);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnXoa.Size = new System.Drawing.Size(171, 50);
-            this.btnXoa.TabIndex = 6;
-            this.btnXoa.Text = "   Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            // 
             // FormCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -259,7 +269,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "FormCustomers";
-            this.Text = "FormCustomers";
+            this.Text = "KHÁCH HÀNG";
             this.Load += new System.EventHandler(this.FormCustomers_Load);
             this.grbCustomers.ResumeLayout(false);
             this.grbCustomers.PerformLayout();

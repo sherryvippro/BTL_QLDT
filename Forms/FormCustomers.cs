@@ -44,7 +44,6 @@ namespace BaiTapLon.Forms
 		}
 		void LoadData()
 		{
-            LoadTheme();
 
             DataTable dtChiTiet = data.ReadData("Select MaKh,TenKh,SDT,DiaChi from tKhachHang");
 			dtvKH.DataSource = dtChiTiet;
@@ -66,14 +65,28 @@ namespace BaiTapLon.Forms
 		}
 		private void FormCustomers_Load(object sender, EventArgs e)
         {
-			LoadData();
 			LoadTheme();
-			btnThem.Enabled = true;
+            DataTable dtChiTiet = data.ReadData("Select MaKh,TenKh,SDT,DiaChi from tKhachHang");
+            dtvKH.DataSource = dtChiTiet;
+
+            dtvKH.Columns[0].Width = 150;
+            dtvKH.Columns[1].Width = 190;
+            dtvKH.Columns[2].Width = 200;
+            dtvKH.Columns[3].Width = 200;
+
+
+            dtvKH.AllowUserToAddRows = false;
+            dtvKH.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dtvKH.Columns[0].HeaderText = "Mã Khách Hàng";
+            dtvKH.Columns[1].HeaderText = "Tên Khách Hàng";
+            dtvKH.Columns[2].HeaderText = "Số Điện Thoại";
+            dtvKH.Columns[3].HeaderText = "Địa Chỉ";
+            btnThem.Enabled = true;
 			btnLuu.Enabled = false;		
 			txtMaKH.ReadOnly = true;
 			btnLuu.Enabled = false;
 			btnBoQua.Enabled = false;
-			LoadData();
+			
 		}
 
 		

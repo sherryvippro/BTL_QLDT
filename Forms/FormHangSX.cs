@@ -190,5 +190,33 @@ namespace BaiTapLon.Forms
                 dtBase.CloseConn();
             }
         }
+
+        private void cbTenH_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbMaH.Checked)
+            {
+                txtMaHSearch.Text = "";
+                txtMaHSearch.Enabled = true;
+            }
+            else
+            {
+                txtMaHSearch.Text = "";
+                txtMaHSearch.Enabled = false;
+            }
+        }
+
+        private void cbMaH_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTenH.Checked)
+            {
+                txtTenHSearch.Text = "";
+                txtTenHSearch.Enabled = true;
+            }
+            else
+            {
+                txtTenHSearch.Text = "";
+                txtTenHSearch.Enabled = false;
+            }
+        }
     }
 }

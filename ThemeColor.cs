@@ -11,26 +11,7 @@ namespace BaiTapLon
     {
         public static Color PrimaryColor { get; set; }
         public static Color SecondaryColor { get; set; }
-        public static List<string> ColorList = new List<string>()
-        {
-            "#3F51B5",
-            "#009688",
-            "#FF5722",
-            "#607D88",
-            "#FF9800",
-            "#9C27B0",
-            "#FF33FF",
-            "#993300",
-            "#008800",
-            "#363636",
-            "#79CDCD",
-            "#A0522D",
-            "#CDC9A5",
-            "#CDB7B5",
-            "#6A5ACD",
-            "#4169E1",
-            "#87CEEB"
-        };
+        
         public static Color ChangeColorBrightness(Color color, double correctionFactor)
         {
             double red = color.R;
